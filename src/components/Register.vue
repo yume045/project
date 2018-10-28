@@ -65,16 +65,16 @@
                       <b-row class="my-1">
                         <b-col sm="3"><label for="input-default">ยาที่แพ้:</label></b-col>
                         <b-col sm="9">
-                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" v-model="medical"></textarea>
                         </b-col>
                       </b-row>
                       <b-row class="my-1">
                         <b-col sm="3"><label for="input-default">โรคประจำตัว:</label></b-col>
                         <b-col sm="9">
-                          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" v-model="disease"></textarea>
                         </b-col>
                       </b-row>
-                      <b-button type="submit" variant="primary" @click="insertUser ()">Submit</b-button>
+                      <router-link to="/Login"><b-button type="submit" variant="primary" @click="insertUser ()">Submit</b-button></router-link>
                       <b-button type="reset" variant="danger">Reset</b-button>
                   </b-container>
                 </div>
@@ -104,14 +104,22 @@ export default {
   },
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js App',
+      idpeople: '',
+      name: '',
+      sername: '',
+      day: '',
+      height: '',
+      bloodtype: '',
+      address: '',
+      numberphone: '',
+      medical: '',
+      disease: ''
     }
   },
   methods: {
     insertUser () {
       let tmp = ({
-        username: this.username,
-        password: this.password,
         idpeople: this.idpeople,
         name: this.name,
         sername: this.sername,
@@ -124,8 +132,6 @@ export default {
         disease: this.disease
       })
       UserRef.push(tmp)
-      this.username = ''
-      this.password = ''
       this.idpeople = ''
       this.name = ''
       this.sername = ''
