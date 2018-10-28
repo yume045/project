@@ -1,0 +1,169 @@
+<template>
+    <div class="hello">
+            <b-alert show>Default Alert</b-alert>
+    <div>
+        <b-nav>
+        <b-nav-item active>Active</b-nav-item>
+        <b-nav-item>Link</b-nav-item>
+        <b-nav-item>Another Link</b-nav-item>
+        <b-nav-item disabled>Disabled</b-nav-item>
+        </b-nav>
+    </div><br><br>
+          <form action="">
+                <div>
+                  <b-container fluid style="width:35%;">
+                    <b-row class="my-1">
+                        <b-col sm="3"><label for="input-default">Username:</label></b-col>
+                        <b-col sm="9">
+                          <b-form-input id="userName" type="text" min=0 placeholder="..." v-model="username"></b-form-input>
+                        </b-col>
+                      </b-row>
+                      <b-row class="my-1">
+                        <b-col sm="3"><label for="input-default">Password:</label></b-col>
+                        <b-col sm="9">
+                          <b-form-input id="userPassword" type="text" min=0 placeholder="..." v-model="password"></b-form-input>
+                        </b-col>
+                      </b-row>
+                      <b-row class="my-1">
+                        <b-col sm="3"><label for="input-default">รหัสประชาชน:</label></b-col>
+                        <b-col sm="9">
+                          <b-form-input id="input-default" type="number" min=0 placeholder="..." v-model="idpeople"></b-form-input>
+                        </b-col>
+                      </b-row>
+                      <b-row class="my-1">
+                        <b-col sm="3"><label for="input-default">ชื่อ:</label></b-col>
+                        <b-col sm="9">
+                          <b-form-input id="input-default" type="text" placeholder="..." v-model="name"></b-form-input>
+                        </b-col>
+                      </b-row>
+                      <b-row class="my-1">
+                        <b-col sm="3"><label for="input-default">นามสกุล:</label></b-col>
+                        <b-col sm="9">
+                          <b-form-input id="input-default" type="text" placeholder="..." v-model="sername"></b-form-input>
+                        </b-col>
+                      </b-row>
+                      <b-row class="my-1">
+                        <b-col sm="3"><label for="input-default">วัน/เดือน/ปี:</label></b-col>
+                        <b-col sm="9">
+                          <b-form-input id="input-default" type="date" placeholder="..." v-model="day"></b-form-input>
+                        </b-col>
+                      </b-row>
+                      <b-row class="my-1">
+                        <b-col sm="3"><label for="input-default">ส่วนสูง:</label></b-col>
+                        <b-col sm="9">
+                          <b-form-input id="input-default" type="number" min=0 placeholder="..." v-model="height"></b-form-input>
+                        </b-col>
+                      </b-row>
+                      <b-row class="my-1">
+                        <b-col sm="3"><label for="input-default">กรุ๊ปเลือด:</label></b-col>
+                        <b-col sm="9">
+                          <b-form-input id="input-default" type="radio" name="blood" value="A" placeholder="..." v-model="bloodtype"></b-form-input>
+                        </b-col>
+                      </b-row>
+                      <b-row class="my-1">
+                        <b-col sm="3"><label for="input-default">ที่อยู่:</label></b-col>
+                        <b-col sm="9">
+                          <b-form-input id="input-default" type="text" placeholder="..." v-model="address"></b-form-input>
+                        </b-col>
+                      </b-row>
+                      <b-row class="my-1">
+                        <b-col sm="3"><label for="input-default">เบอร์โทร:</label></b-col>
+                        <b-col sm="9">
+                          <b-form-input id="input-default" type="text" placeholder="..." v-model="numberphone"></b-form-input>
+                        </b-col>
+                      </b-row>
+                      <b-row class="my-1">
+                        <b-col sm="3"><label for="input-default">ยาที่แพ้:</label></b-col>
+                        <b-col sm="9">
+                          <b-form-input id="input-default" type="text" placeholder="..." v-model="medical"></b-form-input>
+                        </b-col>
+                      </b-row>
+                      <b-row class="my-1">
+                        <b-col sm="3"><label for="input-default">โรคประจำตัว:</label></b-col>
+                        <b-col sm="9">
+                          <b-form-input id="input-default" type="text" placeholder="..." v-model="disease"></b-form-input>
+                        </b-col>
+                      </b-row>
+                      <b-button type="submit" variant="primary" @click="insertUser ()">Submit</b-button>
+                      <b-button type="reset" variant="danger">Reset</b-button>
+                  </b-container>
+                </div>
+          </form>
+  </div>
+</template>
+
+<script>
+
+import firebase from 'firebase'
+var config = {
+  apiKey: 'AIzaSyCA20IXkP9kav5RufZBxtahCvq2-_qGbQU',
+  authDomain: 'online-medical.firebaseapp.com',
+  databaseURL: 'https://online-medical.firebaseio.com',
+  projectId: 'online-medical',
+  storageBucket: '',
+  messagingSenderId: '273486925918'
+}
+let app = firebase.initializeApp(config)
+let db = app.database()
+let UserRef = db.ref('User')
+
+export default {
+  name: 'HelloWorld',
+  fiurebase: {
+    User: UserRef
+  },
+  data () {
+    return {
+      msg: 'Welcome to Your Vue.js App'
+    }
+  },
+  methods: {
+    insertUser () {
+      let tmp = ({
+        username: this.username,
+        password: this.password,
+        idpeople: this.idpeople,
+        name: this.name,
+        sername: this.sername,
+        day: this.day,
+        height: this.height,
+        bloodtype: this.bloodtype,
+        address: this.address,
+        numberphone: this.numberphone,
+        medical: this.medical,
+        disease: this.disease
+      })
+      UserRef.push(tmp)
+      this.username = ''
+      this.password = ''
+      this.idpeople = ''
+      this.name = ''
+      this.sername = ''
+      this.day = ''
+      this.height = ''
+      this.bloodtype = ''
+      this.address = ''
+      this.numberphone = ''
+      this.medical = ''
+      this.disease = ''
+    }
+  }
+}
+</script>
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+h1, h2 {
+  font-weight: normal;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
+a {
+  color: #42b983;
+}
+</style>
