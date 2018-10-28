@@ -8,7 +8,7 @@
       <b-nav-item>ติดต่อ</b-nav-item>
       <b-nav-item disabled>Disabled</b-nav-item>
       <button style="margin-left:50%;"><router-link to="/Login">เข้าสู่ระบบ</router-link></button>
-      <button style="margin-left:1%;"><router-link to="/Register">สมัครสมาชิก++++++++++</router-link></button>
+      <button style="margin-left:1%;"><router-link to="/Register">สมัครสมาชิก+++++++</router-link></button>
     </b-nav>
 </div><br><br>
 <div style="margin-left:35%;">
