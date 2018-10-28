@@ -1,87 +1,77 @@
 <template>
     <div class="hello">
             <b-alert show>Default Alert</b-alert>
-    <div>
-        <b-nav>
-        <b-nav-item active>Active</b-nav-item>
-        <b-nav-item>Link</b-nav-item>
-        <b-nav-item>Another Link</b-nav-item>
-        <b-nav-item disabled>Disabled</b-nav-item>
-        </b-nav>
-    </div><br><br>
+  <div>
+    <b-nav>
+      <b-nav-item active><router-link to="/Home">หน้าหลัก</router-link></b-nav-item>
+      <b-nav-item><router-link to="/Question">ปรึกษาแพทย์</router-link></b-nav-item>
+      <b-nav-item>ติดต่อ</b-nav-item>
+      <b-nav-item disabled>Disabled</b-nav-item>
+      <button style="margin-left:50%;"><router-link to="/Login">เข้าสู่ระบบ</router-link></button>
+      <button style="margin-left:1%;"><router-link to="/Register">สมัครสมาชิก</router-link></button>
+    </b-nav>
+</div><br><br>
           <form action="">
                 <div>
                   <b-container fluid style="width:35%;">
-                    <b-row class="my-1">
-                        <b-col sm="3"><label for="input-default">Username:</label></b-col>
-                        <b-col sm="9">
-                          <b-form-input id="userName" type="text" min=0 placeholder="..." v-model="username"></b-form-input>
-                        </b-col>
-                      </b-row>
-                      <b-row class="my-1">
-                        <b-col sm="3"><label for="input-default">Password:</label></b-col>
-                        <b-col sm="9">
-                          <b-form-input id="userPassword" type="text" min=0 placeholder="..." v-model="password"></b-form-input>
-                        </b-col>
-                      </b-row>
                       <b-row class="my-1">
                         <b-col sm="3"><label for="input-default">รหัสประชาชน:</label></b-col>
                         <b-col sm="9">
-                          <b-form-input id="input-default" type="number" min=0 placeholder="..." v-model="idpeople"></b-form-input>
+                          <b-form-input id="input-default" type="number" min=0 placeholder="" v-model="idpeople"></b-form-input>
                         </b-col>
                       </b-row>
                       <b-row class="my-1">
                         <b-col sm="3"><label for="input-default">ชื่อ:</label></b-col>
                         <b-col sm="9">
-                          <b-form-input id="input-default" type="text" placeholder="..." v-model="name"></b-form-input>
+                          <b-form-input id="input-default" type="text" placeholder="" v-model="name"></b-form-input>
                         </b-col>
                       </b-row>
                       <b-row class="my-1">
                         <b-col sm="3"><label for="input-default">นามสกุล:</label></b-col>
                         <b-col sm="9">
-                          <b-form-input id="input-default" type="text" placeholder="..." v-model="sername"></b-form-input>
+                          <b-form-input id="input-default" type="text" placeholder="" v-model="sername"></b-form-input>
                         </b-col>
                       </b-row>
                       <b-row class="my-1">
                         <b-col sm="3"><label for="input-default">วัน/เดือน/ปี:</label></b-col>
                         <b-col sm="9">
-                          <b-form-input id="input-default" type="date" placeholder="..." v-model="day"></b-form-input>
+                          <b-form-input id="input-default" type="date" placeholder="" v-model="day"></b-form-input>
                         </b-col>
                       </b-row>
                       <b-row class="my-1">
                         <b-col sm="3"><label for="input-default">ส่วนสูง:</label></b-col>
                         <b-col sm="9">
-                          <b-form-input id="input-default" type="number" min=0 placeholder="..." v-model="height"></b-form-input>
+                          <b-form-input id="input-default" type="number" min=0 placeholder="" v-model="height"></b-form-input>
                         </b-col>
                       </b-row>
                       <b-row class="my-1">
                         <b-col sm="3"><label for="input-default">กรุ๊ปเลือด:</label></b-col>
                         <b-col sm="9">
-                          <b-form-input id="input-default" type="radio" name="blood" value="A" placeholder="..." v-model="bloodtype"></b-form-input>
+                          <b-form-input id="input-default" type="radio" name="blood"  placeholder="" v-model="bloodtype"></b-form-input>
                         </b-col>
                       </b-row>
                       <b-row class="my-1">
                         <b-col sm="3"><label for="input-default">ที่อยู่:</label></b-col>
                         <b-col sm="9">
-                          <b-form-input id="input-default" type="text" placeholder="..." v-model="address"></b-form-input>
+                          <b-form-input id="input-default" type="text" placeholder="" v-model="address"></b-form-input>
                         </b-col>
                       </b-row>
                       <b-row class="my-1">
                         <b-col sm="3"><label for="input-default">เบอร์โทร:</label></b-col>
                         <b-col sm="9">
-                          <b-form-input id="input-default" type="text" placeholder="..." v-model="numberphone"></b-form-input>
+                          <b-form-input id="input-default" type="text" placeholder="" v-model="numberphone"></b-form-input>
                         </b-col>
                       </b-row>
                       <b-row class="my-1">
                         <b-col sm="3"><label for="input-default">ยาที่แพ้:</label></b-col>
                         <b-col sm="9">
-                          <b-form-input id="input-default" type="text" placeholder="..." v-model="medical"></b-form-input>
+                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                         </b-col>
                       </b-row>
                       <b-row class="my-1">
                         <b-col sm="3"><label for="input-default">โรคประจำตัว:</label></b-col>
                         <b-col sm="9">
-                          <b-form-input id="input-default" type="text" placeholder="..." v-model="disease"></b-form-input>
+                          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                         </b-col>
                       </b-row>
                       <b-button type="submit" variant="primary" @click="insertUser ()">Submit</b-button>

@@ -1,22 +1,40 @@
 <template>
-    <div class="container">
-    <div class="row">
-    <div class="col-md-offset-5 col-md-3">
-    <div class="form-login">
-    <h4>เข้าสู่ระบบ</h4>
-    <input type="text" id="userName" class="form-control input-sm chat-input" placeholder="username" />
-    <br>
-    <input type="text" id="userPassword" class="form-control input-sm chat-input" placeholder="password" />
-    <br>
-    <div class="wrapper">
-    <span class="group-btn">
-    <a href="#" class="btn btn-primary btn-md">login <i class="fa fa-sign-in"></i></a>
-    </span>
-    </div>
-    </div>
-    </div>
-    </div>
-</div>
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <div class="column is-4 is-offset-4">
+                    <h3 class="title has-text-grey">Login</h3>
+                    <div class="box">
+                        <figure class="avatar">
+                            <img src="https://media1.tenor.com/images/f217536789f9643c9fcd8bd0c5c3434f/tenor.gif?itemid=11533002">
+                        </figure>
+                        <form>
+                            <div class="field">
+                                <div class="control">
+                                    <input class="input is-medium" type="number" placeholder="หมายเลข HN" autofocus="">
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <div class="control">
+                                    <input class="input is-medium" type="number" placeholder="รหัสบัตรประชาชน">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label class="checkbox">
+                  <input type="checkbox">
+                 จดจำรหัสผ่าน
+                </label>
+                            </div>
+                            <button class="button is-block is-info is-large is-fullwidth">เข้าสู่ระบบ</button>
+                        </form>
+                    </div>
+                    <p class="has-text-grey">
+                        <a><router-link to="/Register">ผู้ป่วยใหม่</router-link></a> &nbsp;·&nbsp;
+                        <a><router-link to="/Home">หน้าหลัก</router-link></a>
+                    </p>
+                </div>
+            </div>
+        </div>
 </template>
 <script>
 export default {
@@ -31,41 +49,39 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-body {
-  background-color:#fff;
-  -webkit-font-smoothing: antialiased;
-  font: normal 14px Roboto,arial,sans-serif;
+html,body {
+  font-family: 'Open Sans', serif;
+  font-size: 14px;
+  font-weight: 300;
 }
-
-.container {
-    padding: 25px;
-    position: fixed;
+.hero.is-success {
+  background: #F2F6FA;
 }
-
-.form-login {
-    background-color: #EDEDED;
-    padding-top: 10px;
-    padding-bottom: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
-    border-radius: 15px;
-    border-color:#d2d2d2;
-    border-width: 5px;
-    box-shadow:0 1px 0 #cfcfcf;
+.hero .nav, .hero.is-success .nav {
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
-
-h4 {
- border:0 solid #fff;
- border-bottom-width:1px;
- padding-bottom:10px;
- text-align: center;
+.box {
+  margin-top: 5rem;
 }
-
-.form-control {
-    border-radius: 10px;
+.avatar {
+  margin-top: -70px;
+  padding-bottom: 20px;
 }
-
-.wrapper {
-    text-align: center;
+.avatar img {
+  padding: 5px;
+  background: #fff;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 2px 3px rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.1);
+  box-shadow: 0 2px 3px rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.1);
+}
+input {
+  font-weight: 300;
+}
+p {
+  font-weight: 700;
+}
+p.subtitle {
+  padding-top: 1rem;
 }
 </style>

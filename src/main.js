@@ -7,6 +7,8 @@ import BootstrapVue from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import VueFire from 'vuefire'
+import VueSwal from 'vue-swal'
+Vue.use(VueSwal)
 Vue.use(VueFire)
 
 Vue.use(BootstrapVue)
