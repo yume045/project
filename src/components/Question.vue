@@ -3,7 +3,7 @@
     <b-alert show>Default Alert</b-alert>
   <div>
     <b-nav>
-      <b-nav-item active><router-link to="/Home">หน้าหลัก</router-link></b-nav-item>
+      <b-nav-item active><router-link to="/">หน้าหลัก</router-link></b-nav-item>
       <b-nav-item><router-link to="/Question">ปรึกษาแพทย์</router-link></b-nav-item>
       <b-nav-item>ติดต่อ</b-nav-item>
       <b-nav-item disabled>Disabled</b-nav-item>

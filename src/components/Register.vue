@@ -3,7 +3,7 @@
             <b-alert show>Default Alert</b-alert>
   <div>
     <b-nav>
-      <b-nav-item active><router-link to="/Home">หน้าหลัก</router-link></b-nav-item>
+      <b-nav-item active><router-link to="/">หน้าหลัก</router-link></b-nav-item>
       <b-nav-item><router-link to="/Question">ปรึกษาแพทย์</router-link></b-nav-item>
       <b-nav-item>ติดต่อ</b-nav-item>
       <b-nav-item disabled>Disabled</b-nav-item>
@@ -14,6 +14,12 @@
           <form action="">
                 <div>
                   <b-container fluid style="width:35%;">
+                    <b-row class="my-1">
+                        <b-col sm="3"><label for="input-default">Username:</label></b-col>
+                        <b-col sm="9">
+                          <b-form-input id="input-default" type="text" min=0 placeholder="" v-model="username"></b-form-input>
+                        </b-col>
+                      </b-row>
                       <b-row class="my-1">
                         <b-col sm="3"><label for="input-default">รหัสประชาชน:</label></b-col>
                         <b-col sm="9">
@@ -114,7 +120,8 @@ export default {
       address: '',
       numberphone: '',
       medical: '',
-      disease: ''
+      disease: '',
+      username: ''
     }
   },
   methods: {
@@ -129,7 +136,8 @@ export default {
         address: this.address,
         numberphone: this.numberphone,
         medical: this.medical,
-        disease: this.disease
+        disease: this.disease,
+        username: this.username
       })
       UserRef.push(tmp)
       this.idpeople = ''
@@ -142,6 +150,7 @@ export default {
       this.numberphone = ''
       this.medical = ''
       this.disease = ''
+      this.username = ''
     }
   }
 }

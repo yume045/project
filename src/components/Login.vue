@@ -30,7 +30,7 @@
                     </div>
                     <p class="has-text-grey">
                         <a><router-link to="/Register">ผู้ป่วยใหม่</router-link></a> &nbsp;·&nbsp;
-                        <a><router-link to="/Home">หน้าหลัก</router-link></a>
+                        <a><router-link to="/">หน้าหลัก</router-link></a>
                     </p>
                 </div>
             </div>
