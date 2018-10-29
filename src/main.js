@@ -8,6 +8,9 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import VueFire from 'vuefire'
 import VueSwal from 'vue-swal'
+import Vuetify from 'vuetify'
+
+Vue.use(Vuetify)
 Vue.use(VueSwal)
 Vue.use(VueFire)
 

@@ -7,8 +7,8 @@
       <b-nav-item><router-link to="/Question">ปรึกษาแพทย์</router-link></b-nav-item>
       <b-nav-item>ติดต่อ</b-nav-item>
       <b-nav-item disabled>Disabled</b-nav-item>
-      <button style="margin-left:50%;"><router-link to="/Login">เข้าสู่ระบบ</router-link></button>
-      <button style="margin-left:1%;"><router-link to="/Register">สมัครสมาชิก</router-link></button>
+      <button style="margin-left:50%;" class="btn btn-outline-primary"><router-link to="/Login">เข้าสู่ระบบ</router-link></button>
+      <button style="margin-left:1%;" class="btn btn-outline-success"><router-link to="/Register">สมัครสมาชิก</router-link></button>
     </b-nav>
 </div><br><br>
           <form action="">
@@ -74,8 +74,8 @@
                           <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" v-model="disease"></textarea>
                         </b-col>
                       </b-row>
-                      <router-link to="/Login"><b-button type="submit" variant="primary" @click="insertUser ()">Submit</b-button></router-link>
-                      <b-button type="reset" variant="danger">Reset</b-button>
+                      <router-link to="/Login"><b-button type="submit" variant="primary" class="btn btn-primary btn-medium" @click="insertUser ()">สมัครสมาชิก</b-button></router-link>
+                      <b-button type="reset" variant="danger" class="btn btn-danger btn-medium">ล้าง</b-button>
                   </b-container>
                 </div>
           </form>

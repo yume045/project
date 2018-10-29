@@ -7,10 +7,19 @@
       <b-nav-item><router-link to="/Question">ปรึกษาแพทย์</router-link></b-nav-item>
       <b-nav-item>ติดต่อ</b-nav-item>
       <b-nav-item disabled>Disabled</b-nav-item>
-      <button style="margin-left:50%;"><router-link to="/Login">เข้าสู่ระบบ</router-link></button>
-      <button style="margin-left:1%;"><router-link to="/Register">สมัครสมาชิก</router-link></button>
+      <button style="margin-left:50%;" class="btn btn-outline-primary"><router-link to="/Login">เข้าสู่ระบบ</router-link></button>
+      <button style="margin-left:1%;" class="btn btn-outline-success"><router-link to="/Register">สมัครสมาชิก</router-link></button>
     </b-nav>
 </div><br><br>
+<v-toolbar>
+    <v-toolbar-title>Title</v-toolbar-title>
+    <v-spacer></v-spacer>
+    <v-toolbar-items class="hidden-sm-and-down">
+      <v-btn flat>Link One</v-btn>
+      <v-btn flat>Link Two</v-btn>
+      <v-btn flat>Link Three</v-btn>
+    </v-toolbar-items>
+  </v-toolbar>
   </div>
 </template>
 <script>
