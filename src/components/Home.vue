@@ -24,7 +24,6 @@
       <div class="container">
   <div class="row">
     <div class="col-sm">
-      One of three columns
       <b-card  title="Card Title"
                   img-src="https://picsum.photos/600/300/?image=25"
                   img-alt="Image"
@@ -39,7 +38,6 @@
         </b-card>
     </div>
     <div class="col-sm">
-      One of three columns
       <b-card  title="Card Title"
                   img-src="https://picsum.photos/600/300/?image=25"
                   img-alt="Image"
@@ -54,7 +52,6 @@
         </b-card>
     </div>
     <div class="col-sm">
-      One of three columns
       <b-card  title="Card Title"
                   img-src="https://picsum.photos/600/300/?image=25"
                   img-alt="Image"
