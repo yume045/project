@@ -28,7 +28,7 @@
                             <button class="button is-block is-info is-large is-fullwidth">เข้าสู่ระบบ</button>
                         </form>
                     </div>
-                    <p class="has-text-grey">
+                    <p class="has-text-grey" >
                         <a><router-link to="/Register">ผู้ป่วยใหม่</router-link></a> &nbsp;·&nbsp;
                         <a><router-link to="/">หน้าหลัก</router-link></a>
                     </p>
@@ -50,7 +50,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 html,body {
-  font-family: 'Open Sans', serif;
+  font-family:'Abel', sans-serif,'Mitr', sans-serif;
   font-size: 14px;
   font-weight: 300;
 }
@@ -83,5 +83,13 @@ p {
 }
 p.subtitle {
   padding-top: 1rem;
+}
+button {
+  font-family:'Abel', sans-serif,'Mitr', sans-serif;
+  font-size: 14px;
+}
+input {
+  font-family:'Abel', sans-serif,'Mitr', sans-serif;
+  font-size: 14px;
 }
 </style>

@@ -153,4 +153,12 @@ li {
 a {
   color: #42b983;
 }
+button {
+  font-family:'Abel', sans-serif,'Mitr', sans-serif;
+  font-size: 14px;
+}
+input {
+  font-family:'Abel', sans-serif,'Mitr', sans-serif;
+  font-size: 14px;
+}
 </style>
