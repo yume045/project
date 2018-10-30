@@ -21,8 +21,8 @@
       </li>
     </ul>
   </div>
-  <button style="margin-left:50%;"><router-link to="/Login">เข้าสู่ระบบ</router-link></button>
-      <button style="margin-left:1%;"><router-link to="/Register">สมัครสมาชิก</router-link></button>
+  <button style="margin-left:50%;" class="btn btn-secondarybtn btn-secondary"><a href="/#/Login">เข้าสู่ระบบ</a></button>
+      <button style="margin-left:1%;" class="btn btn-secondarybtn btn-secondary"><a href="/#/Register">เข้าสู่ระบบ</a></button>
 </nav>
     <router-view/>
   </div>
