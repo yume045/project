@@ -65,8 +65,8 @@
                           <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" v-model="disease"></textarea>
                         </b-col>
                       </b-row>
-                      <router-link to="/Login"><b-button type="submit" variant="primary" class="btn btn-primary btn-medium" @click="insertUser ()">สมัครสมาชิก</b-button></router-link>
-                      <b-button type="reset" variant="danger" class="btn btn-danger btn-medium">ล้าง</b-button>
+                      <router-link to="/Login"><b-button type="submit" variant="primary" class="btn btn-outline-primary" @click="insertUser ()">สมัครสมาชิก</b-button></router-link>
+                      <b-button type="reset" variant="danger" class="btn btn-outline-danger">ยกเลิก</b-button>
                   </b-container>
                 </div>
           </form>
