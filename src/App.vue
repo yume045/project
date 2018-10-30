@@ -14,15 +14,15 @@
         <a class="nav-link" href="/#/Question">ปรึกษาแพทย์</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Pricing</a>
+        <a class="nav-link" href="/#/Medicine">ยา</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
+        <a class="nav-link disabled" href="/#/Disease">โรค</a>
       </li>
     </ul>
   </div>
-  <button style="margin-left:50%;" class="btn btn-secondarybtn btn-secondary"><a href="/#/Login">เข้าสู่ระบบ</a></button>
-      <button style="margin-left:1%;" class="btn btn-secondarybtn btn-secondary"><a href="/#/Register">เข้าสู่ระบบ</a></button>
+      <a href="/#/Login"><button style="margin-left:0%;" class="btn btn-outline-primary">เข้าสู่ระบบ</button></a>
+      <a href="/#/Register"><button style="margin-left:2%;" class="btn btn-outline-primary">สมัครสมาชิก</button></a>
 </nav>
     <router-view/>
   </div>
@@ -36,7 +36,7 @@ export default {
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family:'Abel', sans-serif,'Mitr', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
