@@ -1,38 +1,13 @@
 <template>
   <div class="hello">
-     <section>
-        <b-tabs position="is-centered" class="block">
-            <b-tab-item label="Pictures"></b-tab-item>
-            <b-tab-item label="Music"></b-tab-item>
-            <b-tab-item label="Videos"></b-tab-item>
-        </b-tabs>
-
-        <b-tabs position="is-right" class="block">
-            <b-tab-item label="Pictures"></b-tab-item>
-            <b-tab-item label="Music"></b-tab-item>
-            <b-tab-item label="Videos"></b-tab-item>
-        </b-tabs>
-    </section>
-    <b-alert show>Default Alert</b-alert>
   <div>
     <b-nav>
       <b-nav-item active><router-link to="/">หน้าหลัก</router-link></b-nav-item>
       <b-nav-item><router-link to="/Question">ปรึกษาแพทย์</router-link></b-nav-item>
       <b-nav-item>ติดต่อ</b-nav-item>
       <b-nav-item disabled>Disabled</b-nav-item>
-      <button style="margin-left:50%;" class="btn btn-outline-primary"><router-link to="/Login">เข้าสู่ระบบ</router-link></button>
-      <button style="margin-left:1%;" class="btn btn-outline-success"><router-link to="/Register">สมัครสมาชิก</router-link></button>
     </b-nav>
 </div><br><br>
-<v-toolbar>
-    <v-toolbar-title>Title</v-toolbar-title>
-    <v-spacer></v-spacer>
-    <v-toolbar-items class="hidden-sm-and-down">
-      <v-btn flat>Link One</v-btn>
-      <v-btn flat>Link Two</v-btn>
-      <v-btn flat>Link Three</v-btn>
-    </v-toolbar-items>
-  </v-toolbar>
   </div>
 </template>
 <script>
