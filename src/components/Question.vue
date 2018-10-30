@@ -8,7 +8,6 @@
       <b-nav-item disabled>Disabled</b-nav-item>
     </b-nav>
 </div><br><br>
-<<<<<<< HEAD
 <nav class="navbar is-white">
   <div class="container">
     <div class="navbar-menu">
@@ -46,8 +45,6 @@
                 </div>
               </div>
             </section>
-=======
->>>>>>> 097cd9268d5e6dd12d55b9cfb82362bf254025fa
   </div>
 </template>
 <script>
