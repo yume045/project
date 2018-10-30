@@ -27,13 +27,13 @@
                       Tags
                       </p>
                       <ul class="menu-list">
-                        <li><span class="tag is-primary is-medium ">Dashboard</span></li><br>
-                        <li><span class="tag is-link is-medium ">Customers</span></li><br>
-                        <li><span class="tag is-light is-danger is-medium ">Authentication</span></li><br>
-                        <li><span class="tag is-dark is-medium ">Payments</span></li><br>
-                        <li><span class="tag is-success is-medium ">Transfers</span></li><br>
-                        <li><span class="tag is-warning is-medium ">Balance</span></li><br>
-                        <li><span class="tag is-medium ">Question</span></li>
+                        <li><span class="menu-label">Dashboard</span></li><br>
+                        <li><span class="menu-label">Customers</span></li><br>
+                        <li><span class="menu-label">Authentication</span></li><br>
+                        <li><span class="menu-label">Payments</span></li><br>
+                        <li><span class="menu-label">Transfers</span></li><br>
+                        <li><span class="menu-label">Balance</span></li><br>
+                        <li><span class="menu-label">Question</span></li>
                       </ul>
                   </aside>
                 </div>
