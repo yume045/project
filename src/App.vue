@@ -1,18 +1,29 @@
 <template>
   <div id="app">
-    <section>
-        <b-tabs position="is-centered" class="block">
-            <b-tab-item label="Pictures"></b-tab-item>
-            <b-tab-item label="Music"></b-tab-item>
-            <b-tab-item label="Videos"></b-tab-item>
-        </b-tabs>
-
-        <b-tabs position="is-right" class="block">
-            <b-tab-item label="Pictures"></b-tab-item>
-            <b-tab-item label="Music"></b-tab-item>
-            <b-tab-item label="Videos"></b-tab-item>
-        </b-tabs>
-    </section>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Features</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Pricing</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+    </ul>
+  </div>
+  <button style="margin-left:50%;"><router-link to="/Login">เข้าสู่ระบบ</router-link></button>
+      <button style="margin-left:1%;"><router-link to="/Register">สมัครสมาชิก</router-link></button>
+</nav>
     <router-view/>
   </div>
 </template>
