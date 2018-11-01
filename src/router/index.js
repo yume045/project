@@ -4,7 +4,7 @@ import Home from '@/components/Home'
 import Register from '@/components/Register'
 import Login from '@/components/Login'
 import Question from '@/components/Question'
-
+import Medicine from '@/components/Medicine'
 Vue.use(Router)
 
 export default new Router({
@@ -28,6 +28,11 @@ export default new Router({
       path: '/Question',
       name: 'Question',
       component: Question
+    },
+    {
+      path: '/Medicine',
+      name: 'Medicine',
+      component: Medicine
     }
   ]
 })

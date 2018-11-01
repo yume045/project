@@ -17,9 +17,12 @@
     "bootstrap-vue": "^2.0.0-rc.11",
     "buefy": "^0.7.0",
     "firebase": "^5.5.5",
+    "v-slim-dialog": "^0.0.9",
     "vue": "^2.5.17",
+    "vue-eagle-modal": "^1.0.0",
     "vue-router": "^3.0.1",
     "vue-swal": "^0.1.0",
+    "vuedals": "^1.7.0",
     "vuefire": "^1.4.5",
     "vuetify": "^1.3.3"
   },
