@@ -25,7 +25,7 @@
                  จดจำรหัสผ่าน
                 </label>
                             </div>
-                            <button class="button is-block is-info is-large is-fullwidth" v-on:click="loginWeb">เข้าสู่ระบบ</button>
+                            <button class="button is-block is-info is-large is-fullwidth" v-on:click="loginWeb()">เข้าสู่ระบบ</button>
                         </form>
                     </div>
                     <p class="has-text-grey" >
@@ -37,34 +37,38 @@
         </div>
 </template>
 <script>
+import firebase from 'firebase'
 export default {
   name: 'Login',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App',
       username: '',
-      password: ''
+      password: '',
+      hasprofile: {},
+      users: ''
     }
   },
   methods: {
     loginWeb: function (e) {
-      if (this.user === null) {
-        if (this.username !== '' && this.password !== '') {
-          this.$store.dispatch('signIn', {username: this.username, password: this.password})
-            .then(() => {
-            }).catch(err => {
-              alert(err)
-            })
-        } else {
-          alert('No space information')
-        }
-        console.log(this.user)
-        if (this.isLoggedIn) {
-          this.$router.push('#/')
-        } else {
-          this.$router.push('/Login')
-        }
-      }
+      const dbRefObject = firebase.database().ref().child('User')
+      const dbReflist = dbRefObject.child(this.username)
+      dbReflist.on('child_added', snap => {
+        this.hasprofile = snap.val()
+        console.log(this.hasprofile)
+      })
+      if (this.hasprofile !== null) {
+        console.log(this.hasprofile.username, this.hasprofile.password)
+        if (this.hasprofile.username === this.username && this.hasprofile.password === this.password) {
+          const userSet = this.hasprofile.username
+          this.$store.dispatch('signIn', userSet)
+          this.$router.push('/')
+          alert('Successfully sign in')
+        } else alert('Username Or Password incorrect')
+      } else alert('Username Or Password incorrect')
+      this.hasprofile = {}
+      this.username = ''
+      this.password = ''
     }
   },
   computed: {
@@ -74,6 +78,12 @@ export default {
     isLoggedIn () {
       return this.$store.getters.isLoggedIn
     }
+  },
+  mounted () {
+    const dbRefObject = firebase.database().ref().child('User')
+    dbRefObject.on('value', snap => {
+      this.users = snap.val()
+    })
   }
 }
 </script>
