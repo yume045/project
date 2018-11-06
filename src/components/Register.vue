@@ -6,6 +6,18 @@
                 <div>
                   <b-container fluid style="width:35%;">
                       <b-row class="my-1">
+                        <b-col sm="3"><label for="input-default">ชื่อผู้ใช้:</label></b-col>
+                        <b-col sm="9">
+                          <b-form-input id="input-default" type="text" min=0 placeholder="" v-model="username"></b-form-input>
+                        </b-col>
+                      </b-row>
+                      <b-row class="my-1">
+                        <b-col sm="3"><label for="input-default">รหัสผ่าน:</label></b-col>
+                        <b-col sm="9">
+                          <b-form-input id="input-default" type="text" min=0 placeholder="" v-model="password"></b-form-input>
+                        </b-col>
+                      </b-row>
+                      <b-row class="my-1">
                         <b-col sm="3"><label for="input-default">รหัสประชาชน:</label></b-col>
                         <b-col sm="9">
                           <b-form-input id="input-default" type="number" min=0 placeholder="" v-model="idpeople"></b-form-input>
@@ -76,26 +88,16 @@
 <script>
 
 import firebase from 'firebase'
-var config = {
-  apiKey: 'AIzaSyCA20IXkP9kav5RufZBxtahCvq2-_qGbQU',
-  authDomain: 'online-medical.firebaseapp.com',
-  databaseURL: 'https://online-medical.firebaseio.com',
-  projectId: 'online-medical',
-  storageBucket: '',
-  messagingSenderId: '273486925918'
-}
-let app = firebase.initializeApp(config)
-let db = app.database()
-let UserRef = db.ref('User')
+var database = firebase.database()
+var UserRef = database.ref('/User')
 
 export default {
   name: 'HelloWorld',
-  fiurebase: {
-    User: UserRef
-  },
   data () {
     return {
       msg: 'Welcome to Your Vue.js App',
+      username: '',
+      password: '',
       idpeople: '',
       name: '',
       sername: '',
@@ -105,12 +107,15 @@ export default {
       address: '',
       numberphone: '',
       medical: '',
-      disease: ''
+      disease: '',
+      HN: ''
     }
   },
   methods: {
     insertUser () {
       let tmp = ({
+        username: this.username,
+        password: this.password,
         idpeople: this.idpeople,
         name: this.name,
         sername: this.sername,
@@ -120,9 +125,12 @@ export default {
         address: this.address,
         numberphone: this.numberphone,
         medical: this.medical,
-        disease: this.disease
+        disease: this.disease,
+        HN: this.HN = Math.floor(Math.random() * (1000000000 - 1 + 1)) + 1
       })
-      UserRef.push(tmp)
+      UserRef.child(this.username).push(tmp)
+      this.username = ''
+      this.password = ''
       this.idpeople = ''
       this.name = ''
       this.sername = ''
@@ -133,6 +141,7 @@ export default {
       this.numberphone = ''
       this.medical = ''
       this.disease = ''
+      this.HN = ''
     }
   }
 }

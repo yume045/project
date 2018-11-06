@@ -10,13 +10,13 @@
                         <form>
                             <div class="field">
                                 <div class="control">
-                                    <input class="input is-medium" type="number" placeholder="หมายเลข HN" autofocus="">
+                                    <input class="input is-medium" type="text" placeholder="ชื่อผู้ใช้" autofocus="" v-model="username">
                                 </div>
                             </div>
 
                             <div class="field">
                                 <div class="control">
-                                    <input class="input is-medium" type="number" placeholder="รหัสบัตรประชาชน">
+                                    <input class="input is-medium" type="password" placeholder="รหัสผ่าน" v-model="password">
                                 </div>
                             </div>
                             <div class="field">
@@ -25,7 +25,7 @@
                  จดจำรหัสผ่าน
                 </label>
                             </div>
-                            <button class="button is-block is-info is-large is-fullwidth">เข้าสู่ระบบ</button>
+                            <button class="button is-block is-info is-large is-fullwidth" v-on:click="loginWeb">เข้าสู่ระบบ</button>
                         </form>
                     </div>
                     <p class="has-text-grey" >
@@ -38,10 +38,41 @@
 </template>
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'Login',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js App',
+      username: '',
+      password: ''
+    }
+  },
+  methods: {
+    loginWeb: function (e) {
+      if (this.user === null) {
+        if (this.username !== '' && this.password !== '') {
+          this.$store.dispatch('signIn', {username: this.username, password: this.password})
+            .then(() => {
+            }).catch(err => {
+              alert(err)
+            })
+        } else {
+          alert('No space information')
+        }
+        console.log(this.user)
+        if (this.isLoggedIn) {
+          this.$router.push('#/')
+        } else {
+          this.$router.push('/Login')
+        }
+      }
+    }
+  },
+  computed: {
+    user () {
+      return this.$store.getters.user
+    },
+    isLoggedIn () {
+      return this.$store.getters.isLoggedIn
     }
   }
 }

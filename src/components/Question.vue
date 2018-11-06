@@ -5,9 +5,9 @@
   <div class="container">
     <div class="navbar-menu">
       <div class="navbar-start">
-        <a class="navbar-item is-active" href="#">Popular</a>
-        <a class="navbar-item" href="#">Recent</a>
-        <a class="navbar-item" href="#">Rising</a>
+        <a class="navbar-item is-active">ดูคำถามทั้งหมด</a>
+        <a class="navbar-item">ดูเฉพาะคำถามที่มีคำตอบทั้งหมด</a>
+        <a class="navbar-item">ดูเฉพาะคำถามที่ยังไม่มีคำตอบทั้งหมด</a>
         </div>
         <div class="navbar-end">
           <div class="navbar-item">
@@ -64,115 +64,24 @@
                   </aside>
                 </div>
                 <div class="column is-9">
-                  <div class="box content">
-                    <article class="post">
-                      <h4>Bulma: How do you center a button in a box?</h4>
-                      <div class="media">
-                        <div class="media-left">
-                          <p class="image is-32x32">
-                            <img src="http://bulma.io/images/placeholders/128x128.png">
-                          </p>
-                        </div>
-                        <div class="media-content">
-                          <div class="content">
-                            <p>
-                              <a href="#">@jsmith</a> replied 34 minutes ago &nbsp;
-                              <span class="tag">Question</span>
-                            </p>
-                          </div>
-                        </div>
-                        <div class="media-right">
-                          <span class="has-text-grey-light"><i class="fa fa-comments"></i> 1</span>
-                        </div>
+                    <div class="box content">
+                      <div class="md-form amber-textarea active-amber-textarea">
+                        <i class="fa fa-pencil prefix"></i>
+                        <textarea type="text" id="form22" class="md-textarea form-control" rows="3"></textarea>
+                        <label for="form22"></label>
                       </div>
-                    </article>
-                    <article class="post">
-                      <h4>TypeError: Data must be a string or a buffer when trying touse vue-bulma-tabs</h4>
-                      <div class="media">
-                        <div class="media-left">
-                          <p class="image is-32x32">
-                            <img src="http://bulma.io/images/placeholders/128x128.png">
-                          </p>
-                        </div>
-                        <div class="media-content">
-                          <div class="content">
-                            <p>
-                              <a href="#">@jsmith</a> replied 53 minutes ago &nbsp;
-                              <span class="tag">Question</span>
-                            </p>
-                          </div>
-                        </div>
-                        <div class="media-right">
-                          <span class="has-text-grey-light"><i class="fa fa-comments"></i> 13</span>
-                        </div>
-                      </div>
-                    </article>
-                    <article class="post">
-                      <h4>How to vertically center elements in Bulma?</h4>
-                      <div class="media">
-                        <div class="media-left">
-                          <p class="image is-32x32">
-                            <img src="http://bulma.io/images/placeholders/128x128.png">
-                          </p>
-                        </div>
-                        <div class="media-content">
-                          <div class="content">
-                            <p>
-                              <a href="#">@jsmith</a> replied 1 hours ago &nbsp;
-                              <span class="tag">Question</span>
-                            </p>
-                          </div>
-                        </div>
-                        <div class="media-right">
-                          <span class="has-text-grey-light"><i class="fa fa-comments"></i> 0</span>
-                        </div>
-                      </div>
-                    </article>
-                    <article class="post">
-                      <h4>I'm trying to use hamburger menu on bulma css, but it doesn't work. What is wrong?</h4>
-                      <div class="media">
-                        <div class="media-left">
-                          <p class="image is-32x32">
-                            <img src="http://bulma.io/images/placeholders/128x128.png">
-                          </p>
-                        </div>
-                        <div class="media-content">
-                          <div class="content">
-                            <p>
-                              <a href="#">@jsmith</a> replied 2 hours ago &nbsp;
-                              <span class="tag">Question</span>
-                            </p>
-                          </div>
-                        </div>
-                        <div class="media-right">
-                          <span class="has-text-grey-light"><i class="fa fa-comments"></i> 5</span>
-                        </div>
-                      </div>
-                    </article>
-                    <article class="post">
-                      <h4>How to make tiles wrap with Bulma CSS?</h4>
-                      <div class="media">
-                        <div class="media-left">
-                          <p class="image is-32x32">
-                            <img src="http://bulma.io/images/placeholders/128x128.png">
-                          </p>
-                        </div>
-                        <div class="media-content">
-                          <div class="content">
-                            <p>
-                              <a href="#">@jsmith</a> replied 3 hours ago &nbsp;
-                              <span class="tag">Question</span>
-                            </p>
-                          </div>
-                        </div>
-                        <div class="media-right">
-                          <span class="has-text-grey-light"><i class="fa fa-comments"></i> 2</span>
-                        </div>
-                      </div>
-                    </article>
+                        <form class="md-form" action="#">
+                            <div class="file-field">
+                                <div class="btn btn-primary btn-sm float-left">
+                                    <input type="file" multiple>
+                                </div>
+                                <button>send</button>
+                                <button>cancle</button>
+                            </div>
+                        </form>
+                    </div>
                   </div>
                 </div>
-              </div>
             </section>
   </div>
 </template>
@@ -265,4 +174,13 @@ article.post:last-child {
 .modal-backdrop {
   position: inherit;
 }
+.file-field.medium .file-path-wrapper {
+  height: 3rem; }
+  .file-field.medium .file-path-wrapper .file-path {
+    height: 2.8rem; }
+
+.file-field.big-2 .file-path-wrapper {
+  height: 3.7rem; }
+  .file-field.big-2 .file-path-wrapper .file-path {
+    height: 3.5rem; }
 </style>

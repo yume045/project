@@ -29,6 +29,16 @@
 </template>
 
 <script>
+import firebase from 'firebase'
+var config = {
+  apiKey: 'AIzaSyCA20IXkP9kav5RufZBxtahCvq2-_qGbQU',
+  authDomain: 'online-medical.firebaseapp.com',
+  databaseURL: 'https://online-medical.firebaseio.com',
+  projectId: 'online-medical',
+  storageBucket: '',
+  messagingSenderId: '273486925918'
+}
+firebase.initializeApp(config)
 export default {
   name: 'App'
 }

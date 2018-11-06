@@ -7,15 +7,13 @@ import BootstrapVue from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import VueFire from 'vuefire'
-import VueSwal from 'vue-swal'
-import Vuetify from 'vuetify'
 import Buefy from 'buefy'
 import 'buefy/dist/buefy.css'
+import Vuex from 'vuex'
+import { store } from './store/store'
 
+Vue.use(Vuex)
 Vue.use(Buefy)
-
-Vue.use(Vuetify)
-Vue.use(VueSwal)
 Vue.use(VueFire)
 
 Vue.use(BootstrapVue)
@@ -25,6 +23,7 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })
