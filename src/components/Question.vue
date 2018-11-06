@@ -67,16 +67,16 @@
                     <div class="box content">
                       <div class="md-form amber-textarea active-amber-textarea">
                         <i class="fa fa-pencil prefix"></i>
-                        <textarea type="text" id="form22" class="md-textarea form-control" rows="3"></textarea>
+                        <textarea type="text" id="form22" class="md-textarea form-control" rows="3" v-model="question"></textarea>
                         <label for="form22"></label>
                       </div>
                         <form class="md-form" action="#">
                             <div class="file-field">
-                                <div class="btn btn-primary btn-sm float-left">
+                                <div class="btn btn-primary float-left">
                                     <input type="file" multiple>
                                 </div>
-                                <button>send</button>
-                                <button>cancle</button>
+                                <button class="btn btn-primary " @click="insertQuestion ()">send</button>
+                                <button class="btn btn-primary ">cancle</button>
                             </div>
                         </form>
                     </div>
@@ -86,11 +86,25 @@
   </div>
 </template>
 <script>
+import firebase from 'firebase'
+var database = firebase.database()
+var questionRef = database.ref('/Question')
+
 export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js App',
+      question: ''
+    }
+  },
+  methods: {
+    insertQuestion () {
+      let tmp = ({
+        question: this.question
+      })
+      questionRef.push(tmp)
+      this.question = ''
     }
   }
 }
